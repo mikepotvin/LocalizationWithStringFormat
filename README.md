@@ -1,6 +1,6 @@
 # Adding StringFormat to TranslateExtension
 
-If you're tasked with adding localization to your Xamarin Application you may start with the [TranslateExtension](https://docs.microsoft.com/en-us/xamarin/xamarin-forms/app-fundamentals/localization/text) example from Xamarin. This allows you to add String Resources to your `AppResources.xaml` file and consume them using XAML or C#.
+If you're tasked with adding localization to your Xamarin Application you may start with the [TranslateExtension](https://docs.microsoft.com/en-us/xamarin/xamarin-forms/app-fundamentals/localization/text) example from Xamarin. This allows you to add String Resources to your `AppResources.resx` file and consume them using XAML or C#.
 
 This solution works well until you need to append a colon or any character to one of your String Resources. In the example below, we have Name & Special Ability on both pages. On the List Page the text is appended with a colon.
 
