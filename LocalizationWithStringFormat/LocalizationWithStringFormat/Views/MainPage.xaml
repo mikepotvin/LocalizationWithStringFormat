@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="LocalizationWithStringFormat.MainPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:effects="clr-namespace:LocalizationWithStringFormat.Effects"
+    xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+    xmlns:local="clr-namespace:LocalizationWithStringFormat;assembly=LocalizationWithStringFormat"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="{local:Translate DogsForAdoption}"
+    ios:Page.UseSafeArea="true"
+    mc:Ignorable="d">
+    <ContentPage.BindingContext>
+        <local:MainViewModel />
+    </ContentPage.BindingContext>
+
+    <Grid>
+        <ListView
+            HasUnevenRows="True"
+            ItemsSource="{Binding Dogs}"
+            x:Name="dogList"
+            SeparatorVisibility="None">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <ContentView Margin="0,5" BackgroundColor="White">
+                            <ContentView.Effects>
+                                <effects:DropShadowEffect Radius="3" />
+                            </ContentView.Effects>
+                            <StackLayout
+                                Margin="16"
+                                Orientation="Vertical"
+                                Spacing="0">
+                                <Image
+                                    Margin="16"
+                                    HorizontalOptions="Center"
+                                    Source="dog" />
+                                <Label
+                                    HorizontalOptions="Center"
+                                    Style="{StaticResource LabelStyle}"
+                                    Text="{local:Translate Name, StringFormat='{0}:'}"
+                                    TextColor="Gray" />
+                                <Label
+                                    Margin="0,0,0,6"
+                                    HorizontalOptions="Center"
+                                    Style="{StaticResource LabelStyle}"
+                                    Text="{Binding Name}"
+                                    TextColor="Black" />
+                                <Label
+                                    HorizontalOptions="Center"
+                                    Style="{StaticResource LabelStyle}"
+                                    Text="{local:Translate SpecialAbility,
+                                                           StringFormat='{0}:'}"
+                                    TextColor="Gray" />
+                                <Label
+                                    HorizontalOptions="Center"
+                                    Style="{StaticResource LabelStyle}"
+                                    Text="{Binding SpecialAbility}"
+                                    TextColor="Black" />
+                            </StackLayout>
+                        </ContentView>
+
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </Grid>
+
+</ContentPage>

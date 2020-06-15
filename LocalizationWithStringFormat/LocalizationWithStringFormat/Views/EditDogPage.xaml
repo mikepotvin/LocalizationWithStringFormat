@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="LocalizationWithStringFormat.EditDogPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+    xmlns:local="clr-namespace:LocalizationWithStringFormat;assembly=LocalizationWithStringFormat"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="Edit Dog Adoption"
+    ios:Page.UseSafeArea="true"
+    mc:Ignorable="d">
+    <ContentPage.BindingContext>
+        <local:EditDogViewModel />
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <Grid Margin="16">
+            <ScrollView>
+                <StackLayout Spacing="4">
+                    <Image Margin="16" Source="dog" />
+
+                    <Label
+                        Style="{StaticResource LabelStyle}"
+                        Text="{local:Translate Name}"
+                        HorizontalOptions="Start"
+                        TextColor="Gray" />
+                    <Entry
+                        Margin="0,0,0,8"
+                        Placeholder="{local:Translate Name}"
+                        Text="{Binding Dog.Name}"
+                        Visual="Material" />
+
+                    <Label
+                        Style="{StaticResource LabelStyle}"
+                        Text="{local:Translate SpecialAbility}"
+                               HorizontalOptions="Start"
+                        TextColor="Gray" />
+                    <Entry
+                        Placeholder="{local:Translate SpecialAbility}"
+                        Text="{Binding Dog.SpecialAbility}"
+                        Visual="Material" />
+                </StackLayout>
+            </ScrollView>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
