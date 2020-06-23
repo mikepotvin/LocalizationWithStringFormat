@@ -21,7 +21,7 @@ As you can see, this is going to lead to duplicate resources which in a larger a
 
 ![enter image description here](https://i.imgur.com/kHiSQI0.png)
 
-    <Label Text="{local:Translate Name" />
+    <Label Text="{local:Translate Name}" />
     <Label Text="{local:Translate Name, StringFormat='{0}:'}" />
 
 Much better.
